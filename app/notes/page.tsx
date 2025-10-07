@@ -1,8 +1,12 @@
-import { createClient } from '@/lib/supabase/server'
+import { NotesList } from './NotesList'
+import { CreateNote } from './CreateNote'
 
-export default async function Page() {
-  const supabase = await createClient()
-  const { data: notes } = await supabase.from('notes').select()
-
-  return <pre>{JSON.stringify(notes, null, 2)}</pre>
+export default function NotesPage() {
+  return (
+    <div className="max-w-xl mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-4">Notes Example</h1>
+      <CreateNote />
+      <NotesList />
+    </div>
+  )
 }
