@@ -1,3 +1,4 @@
+import React from 'react'
 'use client'
 import { useEffect, useState } from 'react'
 import { supabase } from '@/utils/supabaseClient'
